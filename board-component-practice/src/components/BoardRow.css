@@ -1,0 +1,42 @@
+.board__row {
+  display: flex;
+  height: 40px;
+}
+
+.board__row .board__third-column, .board__row .board__fourth-column {
+  color: darkgray;
+}
+
+.board__row > div {
+  border-top: 1px solid darkgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board__row .board__second-column {
+  justify-content: start;
+}
+
+.board__row:last-child {
+  border-bottom: 1px solid darkgray;
+}
+
+.board__first-column {
+  width: 50px;
+  text-align: center;
+}
+
+.board__second-column {
+  flex: 1;
+}
+
+.board__third-column {
+  width: 100px;
+  text-align: center;
+}
+
+.board__fourth-column {
+  width: 100px;
+  text-align: center;
+}
