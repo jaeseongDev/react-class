@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.board {
+  margin-top: 80px;
+  width: 80%;
+}
+
+.board__header {
+  border-top: 2px solid gray;
+  height: 40px;
+  text-align: center;
+  font-weight: 500;
+}
+.board__header {
+  display: flex;
+  align-items: center;
+}
+
+.board__row {
+  display: flex;
+  height: 40px;
+}
+
+.board__row > div {
+  border-top: 1px solid darkgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board__row .board__second-column {
+  justify-content: start;
+}
+
+.board__row:last-child {
+  border-bottom: 1px solid darkgray;
+}
+
+.board__first-column {
+  width: 50px;
+  text-align: center;
+}
+
+.board__second-column {
+  flex: 1;
+}
+
+.board__third-column {
+  width: 100px;
+  text-align: center;
+}
+
+.board__fourth-column {
+  width: 100px;
+  text-align: center;
+}
+
+.board__row .board__third-column, .board__row .board__fourth-column {
+  color: darkgray;
+}
+
+.board__footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.board__search-input {
+  height: 30px;
+  width: 200px;
+  border: 1px solid lightgray;
+  margin-right: 10px;
+}
+
+.board__write-button {
+  all: unset;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 14px;
+  cursor: pointer
+}
+
+
