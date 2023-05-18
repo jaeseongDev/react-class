@@ -1,0 +1,7 @@
+.input {
+  background-color: aqua;
+}
+
+.input.invalid {
+  background-color: lightsalmon;
+}

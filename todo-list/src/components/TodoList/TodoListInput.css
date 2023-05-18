@@ -1,0 +1,25 @@
+.todo-list__input {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.todo-list__input input {
+  all: unset;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 6px 10px;
+}
+
+.todo-list__input button {
+  width: 50px;
+  border: none;
+  border-left: 1px solid gray;
+  cursor: pointer;
+}
+
+.todo-list__input button:hover {
+  background-color: lightgray;
+}
+

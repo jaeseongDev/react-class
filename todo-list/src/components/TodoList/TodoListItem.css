@@ -1,0 +1,15 @@
+.todo-list__item {
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  font-weight: 500;
+}
+
+.todo-list__item:last-child {
+  border-bottom: none;
+}
+
+.todo-list__item button {
+  cursor: pointer;
+}
