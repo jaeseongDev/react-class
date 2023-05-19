@@ -1,12 +1,11 @@
-import TodoListItem from "./TodoListItem";
+import TodoListItem from './TodoListItem';
 
-const TodoListItems = () => {
+const TodoListItems = ({ items, onDeleteTodoItem }) => {
   return (
     <>
-      <TodoListItem />
-      <TodoListItem />
+      {items.map(item => <TodoListItem item={item} key={item.id} onDeleteTodoItem={onDeleteTodoItem} />)}
     </>
-  )
-}
+  );
+};
 
 export default TodoListItems;

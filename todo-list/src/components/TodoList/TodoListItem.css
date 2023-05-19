@@ -6,10 +6,6 @@
   font-weight: 500;
 }
 
-.todo-list__item:last-child {
-  border-bottom: none;
-}
-
 .todo-list__item button {
   cursor: pointer;
 }

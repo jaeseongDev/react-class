@@ -1,10 +1,14 @@
 import './TodoListItem.css';
 
-const TodoListItem = () => {
+const TodoListItem = ({ item, onDeleteTodoItem }) => {
+  const clickButtonHandler = () => {
+    onDeleteTodoItem(item.id);
+  };
+
   return (
     <div className='todo-list__item'>
-      양치하기
-      <button>삭제</button>
+      {item.content}
+      <button onClick={clickButtonHandler}>삭제</button>
     </div>
   );
 };
