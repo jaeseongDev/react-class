@@ -1,14 +1,30 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 
-const RedBox = styled.div`
+const theme = {
+  dark: {
+    primary: '#000'
+  },
+  light: {
+    primary: '#fff'
+  }
+};
+
+const StyledButton = styled.button`
   width: 5rem;
-  height: 5rem;
-  background: red;
-`
+  height: 2rem;
+  background: ${(props) => props.theme.dark.primary};
+  color: ${(props) => props.theme.light.primary};
+  font-size: 20px;
+`;
+
 
 function App() {
-  return <RedBox />
+  return (
+    <ThemeProvider theme={theme}>
+      <StyledButton>버튼</StyledButton>
+    </ThemeProvider>
+  );
 }
 
 export default App;
