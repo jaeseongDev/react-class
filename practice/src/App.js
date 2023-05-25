@@ -1,29 +1,29 @@
-import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-
-const theme = {
-  dark: {
-    primary: '#000'
-  },
-  light: {
-    primary: '#fff'
-  }
-};
-
-const StyledButton = styled.button`
-  width: 5rem;
-  height: 2rem;
-  background: ${(props) => props.theme.dark.primary};
-  color: ${(props) => props.theme.light.primary};
-  font-size: 20px;
-`;
-
+import React, { useEffect, useState } from 'react';
 
 function App() {
+  const [nickname, setNickname] = useState('');
+  const [valid, setValid] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log('닉네임 중복 체크 API 요청');
+    }, 1000);
+
+    return () => {
+      console.log('Clean Up');
+      clearTimeout(timer);
+    };
+  }, [nickname]);
+
+  const changeNameHandler = (e) => {
+    setNickname(e.target.value);
+    console.log(e.target.value);
+  };
+
   return (
-    <ThemeProvider theme={theme}>
-      <StyledButton>버튼</StyledButton>
-    </ThemeProvider>
+    <>
+      <input value={nickname} onChange={changeNameHandler} style={{ backgroundColor: valid ? '' : 'red' }} />
+    </>
   );
 }
 

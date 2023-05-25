@@ -29,9 +29,14 @@ const StyledSignUpLabelInput = styled.div`
   input::placeholder {
     color: gray;
   }
+
+  .error-text {
+    color: red;
+    font-size: 14px;
+  }
 `;
 
-const SignUpLabelInput = ({ id, placeholder, required, labelText, type = 'text', value, onChangeInput }) => {
+const SignUpLabelInput = ({ id, placeholder, required, labelText, type = 'text', value, onChangeInput, error }) => {
   return (
     <StyledSignUpLabelInput>
       <label htmlFor={id}>
@@ -44,6 +49,7 @@ const SignUpLabelInput = ({ id, placeholder, required, labelText, type = 'text',
         }
       </label>
       <input id={id} placeholder={placeholder} required={required} type={type} value={value} onChange={onChangeInput} />
+      {error && <span className='error-text'>{error}</span>}
     </StyledSignUpLabelInput>
   );
 };
