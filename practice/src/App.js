@@ -1,28 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useRef } from 'react';
+
+const style = {
+  border: '1px solid black',
+  height: '300px',
+  width: '300px',
+  overflow: 'auto',
+  position: 'relative'
+};
+
+const innerStyle = {
+  width: '100%',
+  height: '650px',
+  background: 'linear-gradient(white, black)'
+};
 
 function App() {
-  const [nickname, setNickname] = useState('');
-  const [valid, setValid] = useState(true);
+  const ref = useRef();
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      console.log('닉네임 중복 체크 API 요청');
-    }, 1000);
-
-    return () => {
-      console.log('Clean Up');
-      clearTimeout(timer);
-    };
-  }, [nickname]);
-
-  const changeNameHandler = (e) => {
-    setNickname(e.target.value);
-    console.log(e.target.value);
+  const scrollToBottom = () => {
+    ref.current.scrollTop =
+      ref.current.scrollHeight - ref.current.clientHeight;
   };
 
   return (
     <>
-      <input value={nickname} onChange={changeNameHandler} style={{ backgroundColor: valid ? '' : 'red' }} />
+      <div style={style} ref={ref}>
+        <div style={innerStyle}></div>
+      </div>
+      <button onClick={scrollToBottom}>맨 밑으로</button>
     </>
   );
 }
