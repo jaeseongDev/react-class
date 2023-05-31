@@ -11,9 +11,9 @@ const StyledBackdrop = styled.div`
   background: rgba(0, 0, 0, 0.75);
 `
 
-const Backdrop = () => {
+const Backdrop = ({ onClose }) => {
   return (
-    <StyledBackdrop />
+    <StyledBackdrop onClick={onClose}/>
   );
 };
 

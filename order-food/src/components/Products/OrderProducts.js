@@ -18,7 +18,7 @@ const OrderProducts = ({ products }) => {
   const orderProducts = products.map(product => {
     return (
       <>
-        <OrderProduct product={product} />
+        <OrderProduct product={product} key={product.id} />
         <hr />
       </>
     )

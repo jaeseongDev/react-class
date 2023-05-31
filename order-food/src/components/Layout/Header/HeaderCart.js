@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import CartContext from '../../../store/cartContext';
 
 const StyledHeaderCart = styled.div`
   background-color: ${({ theme }) => theme.colors.secondary};
@@ -16,7 +17,7 @@ const StyledHeaderCart = styled.div`
     font-weight: 700;
   }
   .count {
-    background-color: ${({ theme }) => theme.colors.primary};;
+    background-color: ${({ theme }) => theme.colors.primary};
     color: white;
     padding: 3px 7px;
     border-radius: 30px;
@@ -27,12 +28,17 @@ const StyledHeaderCart = styled.div`
   }
 `
 
-const HeaderCart = () => {
+const HeaderCart = ({ onClick }) => {
+  const cartContext = useContext(CartContext);
+
+  const numberOfCartItems = cartContext.items.reduce((acc, cur) => {
+    return acc + cur.amount;
+  }, 0)
 
   return (
-    <StyledHeaderCart>
+    <StyledHeaderCart onClick={onClick}>
       <span className="text">장바구니</span>
-      <span className="count">3</span>
+      <span className="count">{numberOfCartItems}</span>
     </StyledHeaderCart>
   );
 };

@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 const StyledCartProduct = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px 0;
+  
   .name {
     font-weight: 800;
     font-size: 18px;
@@ -39,14 +44,15 @@ const StyledCartProduct = styled.div`
   }
 `
 
-const CartProduct = () => {
+const CartProduct = ({ product }) => {
+  const { name, price, amount } = product;
   return (
     <StyledCartProduct>
       <div>
-        <div className="name">Sushi</div>
+        <div className="name">{name}</div>
         <div>
-          <span className="price">20,000원</span>
-          <span className="amount">1</span>
+          <span className="price">{price}</span>
+          <span className="amount">{amount}</span>
         </div>
       </div>
       <div>

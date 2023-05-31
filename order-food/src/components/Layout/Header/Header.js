@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import HeaderCart from './HeaderCart';
+import CartContext from '../../../store/cartContext';
 
 const StyledHeader = styled.div`
   position: fixed;
@@ -19,13 +20,13 @@ const StyledHeader = styled.div`
   }
 `
 
-const Header = () => {
+const Header = ({ onShowCart }) => {
   return (
     <StyledHeader>
       <h1>
         배달의 민족
       </h1>
-      <HeaderCart />
+      <HeaderCart onClick={onShowCart}/>
     </StyledHeader>
   );
 };
