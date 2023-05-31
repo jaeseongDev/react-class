@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
+import CartContext from '../../store/cartContext';
 
 const StyledAddOrderInput = styled.div`
   .input-container {
@@ -21,7 +22,7 @@ const StyledAddOrderInput = styled.div`
   }
   
   .input:focus {
-    outline: none;
+    outline: none; 
   }
   
   .button {
@@ -35,8 +36,8 @@ const StyledAddOrderInput = styled.div`
   }
 `
 
-const AddOrderInput = () => {
-  
+const AddOrderInput = ({ productId }) => {
+
   return (
     <StyledAddOrderInput>
       <div className="input-container">

@@ -9,10 +9,10 @@ const StyledCartProducts = styled.div`
 const CartProducts = ({ products }) => {
   const contents = products.map(product => {
     return (
-      <>
-        <CartProduct product={product} key={product.id}/>
+      <div key={product.id}>
+        <CartProduct product={product} />
         <hr />
-      </>
+      </div>
     )
   })
   return (

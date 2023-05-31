@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import AddOrderInput from './AddOrderInput';
 import Product from './Product';
+import CartContext from '../../store/cartContext';
 
 const StyledOrderProduct = styled.div`
   display: flex;
@@ -9,6 +10,13 @@ const StyledOrderProduct = styled.div`
 `
 
 const OrderProduct = ({ product }) => {
+  const cartContext = useContext(CartContext);
+  const [amount, setAmount] = useState(0);
+  cartContext.addItem({
+    ...product,
+    amount
+  })
+
   return (
     <StyledOrderProduct>
       <Product product={product} />

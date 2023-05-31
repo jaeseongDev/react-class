@@ -17,10 +17,10 @@ const StyledOrderProducts = styled.div`
 const OrderProducts = ({ products }) => {
   const orderProducts = products.map(product => {
     return (
-      <>
-        <OrderProduct product={product} key={product.id} />
+      <div key={product.id}>
+        <OrderProduct product={product} />
         <hr />
-      </>
+      </div>
     )
   })
   return (
