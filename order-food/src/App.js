@@ -1,6 +1,7 @@
 import Header from './components/Layout/Header/Header';
 import Layout from './components/Layout/Layout';
 import OrderProducts from './components/Products/OrderProducts';
+import Cart from './components/Cart/Cart';
 
 function App() {
   const products = [
@@ -19,6 +20,7 @@ function App() {
   ]
   return (
     <Layout>
+      <Cart />
       <Header />
       <OrderProducts products={products}/>
     </Layout>

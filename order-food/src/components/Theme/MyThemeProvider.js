@@ -5,6 +5,7 @@ const theme = {
   colors: {
     primary: "rgb(128,209,236)",
     secondary: "rgb(0,136,152)",
+    tertiary: "rgb(1,84,96)",
   }
 }
 

@@ -5,6 +5,11 @@ const StyledHeaderCart = styled.div`
   background-color: ${({ theme }) => theme.colors.secondary};
   padding: 10px 20px;
   border-radius: 20px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.tertiary};
+  }
   
   .text {
     color: white;
