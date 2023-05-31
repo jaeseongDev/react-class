@@ -36,15 +36,19 @@ const StyledAddOrderInput = styled.div`
   }
 `
 
-const AddOrderInput = ({ productId }) => {
-
+const AddOrderInput = ({ product }) => {
+  const [amount, setAmount] = useState(0);
+  const inputChangeHandler = (e) => {
+    setAmount(e.target.value)
+  }
+  const cartContext = useContext(CartContext);
   return (
     <StyledAddOrderInput>
       <div className="input-container">
         <span className="text">수량 </span>
-        <input className="input" type="number"/>
+        <input onChange={inputChangeHandler} className="input" type="number" value={amount}/>
       </div>
-      <button className="button">장바구니에 추가</button>
+      <button className="button" onClick={() => cartContext.addProduct(product, +amount)}>장바구니에 추가</button>
     </StyledAddOrderInput>
   );
 };

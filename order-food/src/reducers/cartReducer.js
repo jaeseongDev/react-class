@@ -45,7 +45,6 @@ export const cartReducer = (state, action) => {
         updatedProducts[index].amount -= action.amount;
       }
     }
-    console.log(updatedProducts);
     return {
       products: updatedProducts,
       totalPrice: updatedTotalPrice

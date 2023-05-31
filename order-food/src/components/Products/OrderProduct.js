@@ -14,7 +14,7 @@ const OrderProduct = ({ product }) => {
   return (
     <StyledOrderProduct>
       <Product product={product} />
-      <AddOrderInput />
+      <AddOrderInput product={product}/>
     </StyledOrderProduct>
   );
 };
