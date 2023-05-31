@@ -24,7 +24,7 @@ const Header = ({ onShowCart }) => {
   return (
     <StyledHeader>
       <h1>
-        배달의 민족
+        키오스크
       </h1>
       <HeaderCart onClick={onShowCart}/>
     </StyledHeader>

@@ -24,7 +24,7 @@ const Product = ({ product }) => {
     <StyledProduct>
       <div className="name">{ name }</div>
       <div className="description">{ description }</div>
-      <div className="price">{ price.toLocaleString() }</div>
+      <div className="price">{ price.toLocaleString() }원</div>
     </StyledProduct>
   );
 };

@@ -1,21 +1,6 @@
 export const defaultCartState = {
-  products: [
-    {
-      id: 1,
-      name: '초밥',
-      description: '설명',
-      price: 10000,
-      amount: 1
-    },
-    {
-      id: 2,
-      name: '초밥',
-      description: '설명',
-      price: 10000,
-      amount: 1
-    }
-  ],
-  totalPrice: 20000,
+  products: [],
+  totalPrice: 0,
 }
 
 export const cartReducer = (state, action) => {
@@ -24,7 +9,10 @@ export const cartReducer = (state, action) => {
     const updatedTotalPrice = state.totalPrice + action.amount * action.product.price;
     let updatedProducts;
     if (index === -1) {
-      updatedProducts = state.products.concat(action.product);
+      updatedProducts = state.products.concat({
+        ...action.product,
+        amount: action.amount
+      });
     } else {
       updatedProducts = [...state.products];
       updatedProducts[index].amount += action.amount;

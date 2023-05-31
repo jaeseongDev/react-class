@@ -43,7 +43,7 @@ const AddOrderInput = ({ product }) => {
   }
   const buttonClickHandler = () => {
     if (amount <= 0) {
-      alert('수량은 0 이상이어야 합니다.')
+      alert('수량은 1 이상이어야 합니다.')
     }
     cartContext.addProduct(product, +amount)
   }

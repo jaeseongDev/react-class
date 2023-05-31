@@ -53,7 +53,7 @@ const CartProduct = ({ product }) => {
       <div>
         <div className="name">{name}</div>
         <div>
-          <span className="price">{price}</span>
+          <span className="price">{price.toLocaleString()}원</span>
           <span className="amount">{amount}</span>
         </div>
       </div>
