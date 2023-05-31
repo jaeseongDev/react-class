@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import CartContext from '../../store/cartContext';
 
 const StyledTotalAmount = styled.div`
   margin: 15px 0;
@@ -7,11 +8,12 @@ const StyledTotalAmount = styled.div`
   justify-content: space-between;
 `
 
-const TotalPrice = ({ totalPrice }) => {
+const TotalPrice = () => {
+  const cartContext = useContext(CartContext)
   return (
     <StyledTotalAmount>
       <div>총 주문 가격</div>
-      <div>{totalPrice.toLocaleString()}원</div>
+      <div>{cartContext.totalPrice.toLocaleString()}원</div>
     </StyledTotalAmount>
   );
 };

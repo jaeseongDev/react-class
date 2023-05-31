@@ -1,58 +1,29 @@
 import CartContext from './cartContext';
 import { useReducer } from 'react';
-
-const defaultCartState = {
-  items: [],
-  totalAmount: 0
-}
-
-const cartReducer = (state, action) => {
-  // if (action.type === 'ADD') {
-  //   // 존재할 경우
-  //   const index = state.items.findIndex(item => item.id === action.item.id);
-  //   if (index !== -1) {
-  //     let updatedItems = [...state.items]
-  //     updatedItems[index].amount += action.item.amount;
-  //   } else {
-  //     const updatedItems = state.items.concat(action.item);
-  //     const updatedTotalAmount = state.totalAmount + action.item.price * action.item.amount;
-  //   }
-  //
-  //
-  //
-  //   // 존재하지 않을 경우
-  //
-  //
-  //   const updatedItems = state.items.concat(action.item);
-  //   const updatedTotalAmount = state.totalAmount + action.item.price * action.item.amount;
-  //   return {
-  //     item: updatedItems,
-  //     totalAmount: updatedTotalAmount
-  //   };
-  // }
-  return defaultCartState;
-}
+import { cartReducer, defaultCartState } from '../reducers/cartReducer';
 
 const CartProvider = ({ children }) => {
   const [cartState, dispatchCartAction] = useReducer(cartReducer, defaultCartState);
 
-  const addItemToCartHandler = (item) => {
+  const addProductFromCartHandler = (product) => {
     dispatchCartAction({
-      type: 'ADD', item: item
+      type: 'ADD',
+      product
     })
   }
 
-  const removeItemFromCartHandler = (id) => {
+  const removeProductFromCartHandler = (id) => {
     dispatchCartAction({
-      type: 'REMOVE', id: id
+      type: 'REMOVE',
+      id
     })
   };
 
   const cartContext = {
-    items: cartState.items,
-    totalAmount: cartState.totalAmount,
-    addItem: addItemToCartHandler,
-    removeItem: removeItemFromCartHandler,
+    products: cartState.products,
+    totalPrice: cartState.totalPrice,
+    addProduct: addProductFromCartHandler,
+    removeProduct: removeProductFromCartHandler,
   }
 
   return (

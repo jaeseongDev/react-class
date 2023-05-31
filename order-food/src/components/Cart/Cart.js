@@ -29,28 +29,11 @@ const StyledCart = styled.div`
 `
 
 const Cart = ({ onClose }) => {
-  const cartProducts = [
-    {
-      id: 1,
-      name: '초밥',
-      description: '설명',
-      price: 10000,
-      amount: 0
-    },
-    {
-      id: 2,
-      name: '초밥',
-      description: '설명',
-      price: 10000,
-      amount: 0
-    }
-  ]
-  const totalPrice = cartProducts.reduce((acc, cur) => acc + cur.price, 0);
   return (
     <Modal onClose={onClose}>
       <StyledCart>
-        <CartProducts products={cartProducts} totalPrice={totalPrice}/>
-        <TotalPrice totalPrice={totalPrice}/>
+        <CartProducts/>
+        <TotalPrice/>
         <div className="button-container">
           <button className='button' onClick={onClose}>취소</button>
           <button className='button'>주문하기</button>

@@ -10,12 +10,6 @@ const StyledOrderProduct = styled.div`
 `
 
 const OrderProduct = ({ product }) => {
-  const cartContext = useContext(CartContext);
-  const [amount, setAmount] = useState(0);
-  cartContext.addItem({
-    ...product,
-    amount
-  })
 
   return (
     <StyledOrderProduct>
