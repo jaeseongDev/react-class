@@ -41,6 +41,12 @@ const AddOrderInput = ({ product }) => {
   const inputChangeHandler = (e) => {
     setAmount(e.target.value)
   }
+  const buttonClickHandler = () => {
+    if (amount <= 0) {
+      alert('수량은 0 이상이어야 합니다.')
+    }
+    cartContext.addProduct(product, +amount)
+  }
   const cartContext = useContext(CartContext);
   return (
     <StyledAddOrderInput>
@@ -48,7 +54,7 @@ const AddOrderInput = ({ product }) => {
         <span className="text">수량 </span>
         <input onChange={inputChangeHandler} className="input" type="number" value={amount}/>
       </div>
-      <button className="button" onClick={() => cartContext.addProduct(product, +amount)}>장바구니에 추가</button>
+      <button className="button" onClick={buttonClickHandler}>장바구니에 추가</button>
     </StyledAddOrderInput>
   );
 };
