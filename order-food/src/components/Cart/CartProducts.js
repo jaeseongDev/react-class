@@ -7,7 +7,7 @@ const StyledCartProducts = styled.div`
   width: 100%;
 `
 
-const CartProducts = ({ products }) => {
+const CartProducts = () => {
   const cartContext = useContext(CartContext);
 
   const contents = cartContext.products.map(product => {

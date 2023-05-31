@@ -6,9 +6,7 @@ import MyThemeProvider from './components/Theme/MyThemeProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <MyThemeProvider>
-      <App />
-    </MyThemeProvider>
-  </React.StrictMode>
+  <MyThemeProvider>
+    <App />
+  </MyThemeProvider>
 );

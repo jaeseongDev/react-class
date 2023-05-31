@@ -5,17 +5,19 @@ import { cartReducer, defaultCartState } from '../reducers/cartReducer';
 const CartProvider = ({ children }) => {
   const [cartState, dispatchCartAction] = useReducer(cartReducer, defaultCartState);
 
-  const addProductFromCartHandler = (product) => {
+  const addProductFromCartHandler = (product, amount) => {
     dispatchCartAction({
       type: 'ADD',
-      product
+      product,
+      amount
     })
   }
 
-  const removeProductFromCartHandler = (id) => {
+  const removeProductFromCartHandler = (product, amount) => {
     dispatchCartAction({
       type: 'REMOVE',
-      id
+      product,
+      amount
     })
   };
 

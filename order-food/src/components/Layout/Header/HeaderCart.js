@@ -30,7 +30,6 @@ const StyledHeaderCart = styled.div`
 
 const HeaderCart = ({ onClick }) => {
   const cartContext = useContext(CartContext);
-  console.log(cartContext)
 
   const numberOfCartItems = cartContext.products.reduce((acc, cur) => {
     return acc + cur.amount;

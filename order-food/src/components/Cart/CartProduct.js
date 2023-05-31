@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import CartContext from '../../store/cartContext';
 const StyledCartProduct = styled.div`
   display: flex;
   justify-content: space-between;
@@ -45,6 +46,7 @@ const StyledCartProduct = styled.div`
 `
 
 const CartProduct = ({ product }) => {
+  const cartContext = useContext(CartContext)
   const { name, price, amount } = product;
   return (
     <StyledCartProduct>
@@ -56,8 +58,8 @@ const CartProduct = ({ product }) => {
         </div>
       </div>
       <div>
-        <button>-</button>
-        <button>+</button>
+        <button onClick={() => cartContext.removeProduct(product, 1)}>-</button>
+        <button onClick={() => cartContext.addProduct(product, 1)}>+</button>
       </div>
     </StyledCartProduct>
   );
